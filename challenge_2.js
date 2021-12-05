@@ -1,3 +1,8 @@
+/* 
+ Challenge Url: https://adventjs.dev/challenges/02 
+ 
+ */
+
 const goodFit = 'bici coche (balón) bici coche peluche';
 const badFit = 'peluche (bici [coche) bici coche balón';
 console.log(isValid(badFit));
