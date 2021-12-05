@@ -1,6 +1,5 @@
 /* 
  Challenge Url: https://adventjs.dev/challenges/01 
- 
  */
 
 const ovejas = [
@@ -19,4 +18,4 @@ export default function contarOvejas(ovejas) {
   );
 }
 
-console.log(contarOvejas(ovejas));
+console.log(contarOvejas(ovejas)); 
