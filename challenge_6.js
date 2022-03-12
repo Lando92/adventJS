@@ -1,22 +1,13 @@
 /* 
- Challenge Url: https://adventjs.dev/challenges/07
+ Challenge Url: https://adventjs.dev/challenges/09
  */
 
-export default function contains(store, product) {
-    let temp = [];
-    visitDescendants(store, (x) => {
-        temp.push(x);
+export default function groupBy(collection, it) {
+    const object = {};
+    const getKey = it instanceof Function ? it : item => item[it];
+    collection.forEach(item => {
+        const key = getKey(item);
+        object[key] = [...(object[key] || []), item];
     });
-    return temp.includes(product);
-}
-
-function visitDescendants(obj, callback) {
-    for (const [key, value] of Object.entries(obj)) {
-        if (value && typeof value === 'object') {
-            // Recurse
-            visitDescendants(value, callback);
-        } else {
-            callback(value);
-        }
-    }
+    return object;
 }
